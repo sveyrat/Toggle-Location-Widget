@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Toggle Location Widget</string>
+    <string name="toggle_location">Toggle Location</string>
+    <string name="state_off">OFF</string>
+    <string name="state_network">NETWORK</string>
+    <string name="state_gps_net">GPS + NET</string>
+</resources>
