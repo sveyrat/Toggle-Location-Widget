@@ -1,0 +1,46 @@
+
+##########################
+# Toggle Location Widget #
+##########################
+
+Android widget to switch the available location providers on and off.
+
+While you sometimes need applications accessing your location to enable certain features, most of the time when you are using your phone those applications do not need to access that information.
+This widget allows you to easily switch the phone location services on and off, and to share your location with the applications only when you are willing to.
+
+The content of this repository is licensed under the terms of the WTFPL 2.0 license.
+The full license text is available in the LICENSE file.
+
+
+#############################
+# Installation instructions #
+#############################
+
+In order to install the application you will need to install the Android SDK.
+Once installed, connect your phone to your computer and use the adb tool to push the application on your phone.
+Default location of the adb tool is in the "platform-tools/adb" directory of the Android SDK.
+To push the application on your phone, compile it into an APK and simply run the following commands :
+**************************************************
+adb remount
+adb push ToggleLocationWidget.apk /system/app/
+**************************************************
+
+If you wish to remove the application from your phone, run the following command :
+**************************************************
+adb shell rm /system/app/ToggleLocationWidget.apk
+**************************************************
+
+The reason why the application should be manually pushed in the /system/app directory of the phone is because it uses two permissions that are not allowed for downloaded APKs.
+Those two permissions are "android.permission.WRITE_SETTINGS" and "android.permission.WRITE_SECURE_SETTINGS", and are used to modify the system's settings.
+
+
+###############################
+# How to use this application #
+###############################
+
+This application contains an Android widget which allows you to switch your phone's available location providers on and off.
+To use it, once installed, simply add the widget on one of your desktops.
+The widget has three positions :
+- OFF : every location providers are switched off, and no application will be able to locate you
+- NETWORK : the only location provider enabled is the network provider, using the cellular network to locate your phone
+- NET + GPS : both the network and GPS providers are enabled, allowing to locate your phone by the cellular network and the GPS chipset
